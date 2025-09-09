@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pré-Orientações para os Tutores - Workshop Regional Sudeste</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cor-principal': '#1E40FB',
+                        'cor-secundaria': '#FC0019',
+                        'cor-destaque': '#FECF2F',
+                        'cor-suporte': '#1FD025',
+                        'cor-texto-escuro': '#434344',
+                        'cor-texto-claro': '#F9F9F9',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cor-texto-claro);
+            color: var(--cor-texto-escuro);
+            scroll-behavior: smooth;
+        }
+
+        .nav-item {
+            position: relative;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: var(--cor-secundaria);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-item:hover::after {
+            width: 100%;
+        }
+
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .section.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .interactive-box {
+            background-color: var(--cor-texto-claro);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .interactive-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .list-item {
+            transition: background-color 0.2s ease;
+        }
+
+        .list-item:hover {
+            background-color: rgba(30, 64, 251, 0.05);
+        }
+
+        .bg-cor-principal-gradient {
+            background-image: linear-gradient(to right, #1E40FB, #1D34C9);
+        }
+
+        .footer-shadow {
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body class="bg-cor-texto-claro text-cor-texto-escuro font-sans min-h-screen flex flex-col">
+
+    <!-- Header com navegação -->
+    <header class="bg-cor-principal text-cor-texto-claro py-4 shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Workshop Regional</h1>
+            <nav class="hidden md:flex space-x-8 text-lg font-medium">
+                <a href="#introducao" class="nav-item">Início</a>
+                <a href="#participacao" class="nav-item">Participação</a>
+                <a href="#programacao" class="nav-item">Programação</a>
+                <a href="#rodape" class="nav-item">Rodapé</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main class="flex-grow pt-24 pb-12">
+        <div class="container mx-auto px-4 space-y-16">
+
+            <!-- Seção de Introdução -->
+            <section id="introducao" class="section">
+                <div class="p-8 rounded-2xl bg-cor-secundaria interactive-box">
+                    <h2 class="text-3xl font-bold text-cor-texto-claro mb-4">Pré-Orientações para os Tutores – Workshop Regional Sudeste</h2>
+                    <p class="text-lg text-cor-texto-claro leading-relaxed">
+                        Prezadas e prezados tutores,
+                        <br><br>
+                        Vamos iniciar com alguns informes gerais para vocês já irem entendendo o que ocorrerá no futuro e o que está sendo planejado. Estamos nos aproximando do nosso encontro presencial do Projeto Posedu Digital na Região Sudeste, que ocorrerá em 18 de novembro de 2025 (terça-feira), das 9h às 18h, com coffee de recepção às 8h30. O evento será realizado na USP em São Paulo.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Seção Sobre a Participação -->
+            <section id="participacao" class="section">
+                <div class="p-8 rounded-2xl bg-cor-texto-claro interactive-box">
+                    <h2 class="text-3xl font-bold text-cor-texto-escuro mb-4">Sobre a Participação</h2>
+                    <ul class="space-y-4">
+                        <li class="p-4 rounded-xl list-item border-l-4 border-cor-principal">
+                            <strong class="text-cor-principal">Nem todos os tutores</strong> estarão presentes presencialmente. A escolha dos participantes seguirá critérios da coordenação e da programação definida.
+                        </li>
+                        <li class="p-4 rounded-xl list-item border-l-4 border-cor-principal">
+                            <strong class="text-cor-principal">A participação dos cursistas não é obrigatória</strong> (como já previsto no curso), mas será fortemente incentivada, uma vez que haverá certificação específica e oportunidade de formação e integração.
+                        </li>
+                        <li class="p-4 rounded-xl list-item border-l-4 border-cor-principal">
+                            <strong class="text-cor-principal">Secretarias Municipais de Educação</strong> são responsáveis pelos custos de deslocamento e hospedagem de seus representantes/cursistas.
+                        </li>
+                        <li class="p-4 rounded-xl list-item border-l-4 border-cor-principal">
+                            <strong class="text-cor-principal">As despesas dos tutores/coordenadores</strong> convidados para o evento serão custeadas pelo projeto, não recaindo sobre vocês.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Seção de Programação -->
+            <section id="programacao" class="section">
+                <div class="p-8 rounded-2xl bg-cor-suporte text-cor-texto-claro interactive-box">
+                    <h2 class="text-3xl font-bold mb-4">Programação</h2>
+                    <p class="text-lg mb-6 leading-relaxed">O Workshop seguirá um formato padronizado para todas as regiões:</p>
+                    
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-2 text-cor-destaque">Manhã</h3>
+                            <ul class="space-y-2 pl-4 list-disc">
+                                <li>Abertura com a coordenação do curso e representantes da UFSCar, MEC e UFMS</li>
+                                <li>Palestra de especialista convidado(a) sobre Educação Digital (transmitida ao vivo)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-2 text-cor-destaque">Tarde</h3>
+                            <p class="text-lg font-medium mb-2">Oficina World Café, metodologia já aplicada em Brasília, com mesas temáticas:</p>
+                            <ul class="space-y-2 pl-8 list-disc list-outside">
+                                <li>Plantão de Dúvidas</li>
+                                <li>Plano de Ação</li>
+                                <li>Atualização Curricular</li>
+                                <li>Formação Docente</li>
+                                <li>Diagnóstico dos Saberes Digitais Docentes</li>
+                                <li>Perfil Profissional para atuação no currículo</li>
+                            </ul>
+                            <p class="text-sm italic mt-4">
+                                <strong class="font-bold">Observação:</strong> a transmissão ao vivo será apenas do período da manhã. A parte da tarde é exclusivamente presencial.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer id="rodape" class="mt-auto bg-cor-texto-escuro text-cor-texto-claro py-6 footer-shadow">
+        <div class="container mx-auto px-4 text-center">
+            <p>
+                Esta página foi formatada por IA baseada em um texto enviado pelo usuário.
+                <br>
+                Data da geração: 09 de setembro de 2025.
+            </p>
+            <p class="mt-2">
+                Para aprofundar seus conhecimentos em Inteligência Artificial na Educação, visite o site:
+                <a href="https://sites.google.com/view/glauberia/" target="_blank" class="text-cor-suporte hover:underline">IA na Educação</a>.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Função para mostrar elementos com fade-in ao rolar a página
+        const sections = document.querySelectorAll('.section');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+
+</body>
+</html>
